@@ -52,3 +52,8 @@ for ($i = 0; $i < count($color_list); $i++) {
 foreach ($color_list as $color) {
     echo "$color\n"; // Red, Green, Blue が表示される                       
 }
+
+// キー付きforeach
+foreach ($array as $key => $value) {
+    echo "$key = $value\n";
+}
