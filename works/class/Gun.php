@@ -34,12 +34,26 @@ class Gun
     function relaod()
     {
         // 問題2
+        if ($this->maxMagazine == $this->currentMagazine) {
+            echo "リロードの必要はありません" . "\n";
+            return;
+        }
+        $this->currentMagazine = $this->maxMagazine;
     }
 
     // 発砲
     function fire()
     {
         // 問題3
+        if ($this->currentMagazine == 0) {
+            echo "リロードしてください" . "\n";
+            return;
+        }
+        $this->currentMagazine--;
+        echo $this->name . "を発砲しました。残弾:" . $this->currentMagazine . "発" . "\n";
+        if ($this->currentMagazine == 0) {
+            echo "リロードしてください" . "\n";
+        }
     }
 
     // 拡張マガジンを装着
